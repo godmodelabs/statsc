@@ -20,7 +20,12 @@
    * @param  {String} _addr
    */
   statsc.connect = function(_addr) {
+
     addr = _addr;
+    if(!addr.match('/$')) {
+        addr += '/';
+    }
+    alert(addr);
   };  
 
   /** 
