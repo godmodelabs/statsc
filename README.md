@@ -54,7 +54,7 @@ You can scale this thing up easily by just picking one of your available servers
 ```javascript
 var availablePorts = [8127, 8128, 8129];
 var port = availablePorts[Math.round(Math.random()*availablePorts.length)-1];
-stats.connect('addr:'+port);
+statsc.connect('addr:'+port);
 ```
 
 ## Server API

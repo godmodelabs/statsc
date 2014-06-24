@@ -21,7 +21,10 @@
    */
   statsc.connect = function(_addr) {
     addr = _addr;
-  };  
+    if(!addr.match('/$')) {
+        addr += '/';
+    }
+  };
 
   /** 
    * Increment the counter at `stat` by one.
