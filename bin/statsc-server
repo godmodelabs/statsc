@@ -4,10 +4,12 @@ var statsc = require('../');
 var http = require('http');
 
 var port = process.env.PORT || 8127;
-statsc.setAddress('localhost:8125');
+var statsdServer = process.env.STATSD || 'localhost:8125'
+
+statsc.setAddress(statsdServer)
 
 http.createServer(statsc.http).listen(port, function() {
-	console.log('StatsC server listening on port '+port);
+	console.log('StatsC server listening on port '+port+', using statsd on '+statsdServer);
 });
 
 process.on('uncaughtException', function(err) {
